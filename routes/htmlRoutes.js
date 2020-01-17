@@ -6,6 +6,12 @@ var path = require("path");
 module.exports = function(app) {
     // HTML GET Requests
     // Below code handles when users "visit" a page.
+    
+    // "*"" covers all options except "/", still needs an individual "/" home page path
+    app.get("/", function(req, res) {
+      res.sendFile(path.join(__dirname, "../public/index.html"));
+    });
+  
   
     // this route directs to the notes html
     app.get("/notes", function(req, res) {
