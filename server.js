@@ -8,7 +8,9 @@ var PORT = process.env.PORT || 3000;
 // sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'))
+// need to connect this to read the CSS file in the public folder ("static files")
+app.use(express.static('public'));
+
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 require("./routes/apiRoutes")(app);
