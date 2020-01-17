@@ -1,26 +1,23 @@
-
 // dependencies
 var express = require("express");
 
 // sets up Express app
 var app = express();
-var PORT = 3000;
+var PORT = process.env.PORT || 3000;
 
 // sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(express.static('public'))
 // The below points our server to a series of "route" files.
 // These routes give our server a "map" of how to respond when users visit or request data from various URLs.
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-
 // starts the server to begin listening
 app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-
+  console.log("App listening on PORT " + PORT);
+});
 
 // for the notes homework if you are getting CORS issues try
 // npm i cors
