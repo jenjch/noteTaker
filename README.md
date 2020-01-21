@@ -38,9 +38,9 @@ https://notetaker-5123534.herokuapp.com/
 
 Images of the application layout:
 
-![home page](./homepagePNG.png)
+![home page](./homepagePNG.PNG)
 
-![notes page](./notespagePNG.png)
+![notes page](./notespagePNG.PNG)
 
 ## Acceptance Criteria
 
